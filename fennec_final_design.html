@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Fennec - Web Without Barriers</title>
+    <meta name="description" content="Project Fennec: Reimagining how people experience the web. Built by and with the community that needs it most.">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Project Fennec - Web Without Barriers">
+    <meta property="og:description" content="Reimagining how people experience the web. Built by and with the community that needs it most.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://projectfennec.org">
+    
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #fafafa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        /* Fox Icon using SVG */
+        .fox-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 3rem;
+            background: #000;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Cpath d='M100 20 C110 15, 125 18, 135 25 L145 35 C155 42, 165 55, 160 65 L155 75 C150 85, 140 90, 130 88 L100 85 C70 87, 55 82, 50 70 L45 60 C40 50, 45 40, 60 35 L75 30 C85 25, 95 20, 100 20 Z M75 45 C78 42, 82 42, 85 45 C88 48, 88 52, 85 55 C82 58, 78 58, 75 55 C72 52, 72 48, 75 45 Z M115 45 C118 42, 122 42, 125 45 C128 48, 128 52, 125 55 C122 58, 118 58, 115 55 C112 52, 112 48, 115 45 Z M100 60 L95 70 L100 72 L105 70 Z M80 100 C80 90, 85 85, 95 85 L105 85 C115 85, 120 90, 120 100 L110 110 L90 110 Z'/%3E%3Cpath d='M60 20 L70 30 L65 40 L55 35 Z M140 20 L145 35 L135 40 L130 30 Z'/%3E%3Cpath d='M120 110 C130 115, 140 120, 145 130 C148 135, 150 140, 145 145 C140 148, 135 145, 130 140 C125 135, 122 125, 120 110 Z'/%3E%3C/svg%3E") no-repeat center;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Cpath d='M100 20 C110 15, 125 18, 135 25 L145 35 C155 42, 165 55, 160 65 L155 75 C150 85, 140 90, 130 88 L100 85 C70 87, 55 82, 50 70 L45 60 C40 50, 45 40, 60 35 L75 30 C85 25, 95 20, 100 20 Z M75 45 C78 42, 82 42, 85 45 C88 48, 88 52, 85 55 C82 58, 78 58, 75 55 C72 52, 72 48, 75 45 Z M115 45 C118 42, 122 42, 125 45 C128 48, 128 52, 125 55 C122 58, 118 58, 115 55 C112 52, 112 48, 115 45 Z M100 60 L95 70 L100 72 L105 70 Z M80 100 C80 90, 85 85, 95 85 L105 85 C115 85, 120 90, 120 100 L110 110 L90 110 Z'/%3E%3Cpath d='M60 20 L70 30 L65 40 L55 35 Z M140 20 L145 35 L135 40 L130 30 Z'/%3E%3Cpath d='M120 110 C130 115, 140 120, 145 130 C148 135, 150 140, 145 145 C140 148, 135 145, 130 140 C125 135, 122 125, 120 110 Z'/%3E%3C/svg%3E") no-repeat center;
+            mask-size: contain;
+        }
+
+        /* Alternative: Use your actual fox SVG as background image */
+        .fox-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 3rem;
+            background: url('Frame.png') no-repeat center;
+            background-size: contain;
+            filter: brightness(0); /* Makes it black */
+        }
+
+        /* Typography */
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        /* Email signup section */
+        .email-section {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .email-title {
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .email-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .email-form {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 2px solid #000;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fff;
+        }
+
+        .email-input:focus {
+            outline: none;
+            background: #f9f9f9;
+        }
+
+        .email-input::placeholder {
+            color: #999;
+        }
+
+        .email-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-weight: 500;
+        }
+
+        .email-btn:hover {
+            background: #333;
+        }
+
+        .email-btn:focus {
+            outline: 2px solid #666;
+            outline-offset: 2px;
+        }
+
+        .privacy-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Links section */
+        .links-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .links-title {
+            font-size: 1.2rem;
+            color: #000;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .links {
+            font-size: 1rem;
+        }
+
+        .links a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+            font-weight: 500;
+        }
+
+        .links a:hover {
+            border-bottom-color: #000;
+        }
+
+        .links a:focus {
+            outline: 2px solid #000;
+            outline-offset: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .description {
+                font-size: 1rem;
+                margin-bottom: 3rem;
+            }
+
+            .email-section {
+                margin: 3rem 0;
+                padding: 2rem 1rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+                max-width: 300px;
+            }
+
+            .email-input {
+                border-bottom: 1px solid #ddd;
+            }
+
+            .links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .fox-logo, .fox-icon {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Subtle animation */
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .container > *:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .container > *:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .container > *:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="container" id="main-content">
+        <!-- Use the fox logo from your image -->
+        <div class="fox-logo" role="img" aria-label="Project Fennec logo - stylized fox"></div>
+        
+        <h1 class="main-title">Project Fennec</h1>
+        <p class="tagline">Imagine the web without barriers</p>
+        
+        <div class="description">
+            Project Fennec is reimagining how people experience the web. Built by and with the community that needs it most, we're developing something that puts users back in control of their digital experience. The web doesn't have to be broken for everyone.
+        </div>
+
+        <div class="email-section">
+            <h2 class="email-title">Be the first to know</h2>
+            <p class="email-subtitle">Join our community and get notified when we launch</p>
+            
+            <form class="email-form" action="#" method="post">
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    placeholder="Enter your email address" 
+                    required
+                    aria-label="Email address for updates"
+                >
+                <button type="submit" class="email-btn">Notify me</button>
+            </form>
+            
+            <p class="privacy-note">
+                We respect your privacy. No spam, just important updates about Project Fennec.
+            </p>
+        </div>
+
+        <div class="links-section">
+            <h2 class="links-title">Follow our progress</h2>
+            <div class="links">
+                <a href="https://github.com/projectfennec" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:hello@projectfennec.org">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Project Fennec. Making accessibility barriers extinct.</p>
+        </div>
+    </div>
+
+    <script>
+        // Email form handling
+        document.querySelector('.email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                // Replace with actual signup service later
+                alert('Thanks for your interest! We\'ll be in touch soon.');
+                this.querySelector('input[type="email"]').value = '';
+            }
+        });
+
+        // Simple scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.email-section, .links-section').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
