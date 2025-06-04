@@ -6,6 +6,11 @@
     <title>Project Fennec - Web Without Barriers</title>
     <meta name="description" content="Project Fennec: Reimagining how people experience the web. Built by and with the community that needs it most.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital@1&family=Hind+Madurai:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <!-- Open Graph for social sharing -->
     <meta property="og:title" content="Project Fennec - Web Without Barriers">
     <meta property="og:description" content="Reimagining how people experience the web. Built by and with the community that needs it most.">
@@ -21,7 +26,7 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Hind Madurai', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
             background: #fafafa;
@@ -49,34 +54,36 @@
             mask-size: contain;
         }
 
-        /* Alternative: Use your actual fox SVG as background image */
+        /* Use your actual fox SVG as background image */
         .fox-logo {
             width: 120px;
             height: 120px;
             margin: 0 auto 3rem;
             background: url('Frame.png') no-repeat center;
             background-size: contain;
-            filter: brightness(0); /* Makes it black */
         }
 
         /* Typography */
         .main-title {
-            font-size: 3.5rem;
-            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50pt;
+            font-weight: 700;
             color: #000;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
         }
 
         .tagline {
-            font-size: 1.4rem;
+            font-family: 'Lora', serif;
+            font-size: 24pt;
             color: #666;
             font-style: italic;
             margin-bottom: 3rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .description {
+            font-family: 'Hind Madurai', sans-serif;
             font-size: 1.1rem;
             color: #444;
             line-height: 1.8;
@@ -169,13 +176,15 @@
         }
 
         .links-title {
+            font-family: 'Hind Madurai', sans-serif;
             font-size: 1.2rem;
             color: #000;
             margin-bottom: 1.5rem;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .links {
+            font-family: 'Hind Madurai', sans-serif;
             font-size: 1rem;
         }
 
@@ -213,11 +222,11 @@
             }
 
             .main-title {
-                font-size: 2.5rem;
+                font-size: 36pt;
             }
 
             .tagline {
-                font-size: 1.2rem;
+                font-size: 18pt;
             }
 
             .description {
@@ -309,26 +318,6 @@
             Project Fennec is reimagining how people experience the web. Built by and with the community that needs it most, we're developing something that puts users back in control of their digital experience. The web doesn't have to be broken for everyone.
         </div>
 
-        <div class="email-section">
-            <h2 class="email-title">Be the first to know</h2>
-            <p class="email-subtitle">Join our community and get notified when we launch</p>
-            
-            <form class="email-form" action="#" method="post">
-                <input 
-                    type="email" 
-                    class="email-input" 
-                    placeholder="Enter your email address" 
-                    required
-                    aria-label="Email address for updates"
-                >
-                <button type="submit" class="email-btn">Notify me</button>
-            </form>
-            
-            <p class="privacy-note">
-                We respect your privacy. No spam, just important updates about Project Fennec.
-            </p>
-        </div>
-
         <div class="links-section">
             <h2 class="links-title">Follow our progress</h2>
             <div class="links">
@@ -343,17 +332,6 @@
     </div>
 
     <script>
-        // Email form handling
-        document.querySelector('.email-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            if (email) {
-                // Replace with actual signup service later
-                alert('Thanks for your interest! We\'ll be in touch soon.');
-                this.querySelector('input[type="email"]').value = '';
-            }
-        });
-
         // Simple scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -370,7 +348,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.email-section, .links-section').forEach(el => {
+        document.querySelectorAll('.links-section').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
